@@ -1,0 +1,274 @@
+# Remember to Execute 'job item-material' lines with the workshop targeted
+# They cannot be blindly executed by cutting and pasting the whole script.
+# job item lines are REM'ed but still need to be executed at the appropriate
+# workshop
+
+###################################################
+#Clear existing workflow settings.
+#Thank you Crashews
+#Added autobutcher reset
+###################################################
+workflow clear all
+autobutcher stop
+autobutcher forget all
+
+###################################################
+#Autobutcher with 10 female kids, 10 male kids, 4 female adults , and 2 male adults
+###################################################
+autobutcher target 10 10 4 2 all
+autobutcher autowatch
+autobutcher start
+
+###################################################
+#@Food 200 Drink 500 +- 50
+###################################################
+workflow count FOOD 1000 50
+workflow count DRINK 1000 50
+
+###################################################
+#@ STEEL Production
+###################################################
+workflow count BAR//COAL 500
+workflow count BAR//IRON 100
+workflow count BAR//PIG_IRON 50
+workflow count BAR//STEEL 100
+
+###################################################
+# SOAP Production
+###################################################
+workflow count BAR//ASH 50
+workflow count LIQUID_MISC//LYE 50
+workflow count BAR/SOAP 50
+
+###################################################
+# Containers and Furniture
+###################################################
+workflow count BIN 20
+workflow count BARREL 40
+workflow count BED 10
+workflow count CABINET/WOOD,STONE,METAL 10
+workflow count BOX/CLOTH,SILK,YARN 20
+workflow count BOX/WOOD,STONE,METAL 10
+
+
+###################################################
+# Leather Upgrades in Masterwork (via Buoyancy)
+# uncomment these lines if you use Masterwork Mod
+###################################################
+#workflow amount TOY//BONE_STUD 90 10
+#workflow amount SKIN_TANNED//ANIMAL_EXOTIC:LEATHER 90 10
+#workflow amount SKIN_TANNED//ANIMAL_STUDDED:LEATHER 90 10
+#workflow amount SKIN_TANNED//ANIMAL_LAMELLAR:LEATHER 90 10
+
+
+###################################################
+# Military 4 Sets (Assuming 3 standing squads with a full spare to sell\trade\etc)
+###################################################
+#Leather Armor Sets
+
+#Iron Armor Sets
+
+#Steel Armor Sets
+
+#Weapons
+    #Crossbows
+    workflow count WEAPON:ITEM_WEAPON_CROSSBOW/WOOD,METAL 40
+    #Obsidian Shortsword
+    workflow count WEAPON:ITEM_WEAPON_SWORD_SHORT/STONE 40
+
+#Ammo
+    workflow amount AMMO:ITEM_AMMO_BOLTS/METAL 1000 100
+    workflow amount AMMO:ITEM_AMMO_BOLTS/WOOD,BONE 200 50
+
+###################################################
+#PROCESS BASIC PLANT GOODS 50 count
+###################################################
+#Quarry Bush (The Seed is a Rock Nut)
+# These need to be confirmed still. Not certain about the Press and Milling lines
+###################################################
+  # PlantProcess (via Farmer's Workshop)
+  workflow count LEAVES//BUSH_QUARRY 50
+  # Milling (via Millstone or Quern)
+	#This should give us paste (via Bouyancy)
+	workflow count GLOB//BUSH_QUARRY 50 10
+    #job item-material 1 BUSH_QUARRY
+  # Brewing (via Still)
+	#NA
+  # Cooking (Via Kitchen)
+	#NA
+  #Pressing (Via Press, check to see if it is the seeds you are pressing rather then the plant)
+	#This should give us cake and OIL counts
+	workflow count GLOB//BUSH_QUARRY:LIQUID_MISC 50
+	workflow count LIQUID_MISC//BUSH_QUARRY:OIL 50
+  # Soap
+	#This should give us Rock Nut Soap count
+	workflow count BAR//BUSH_QUARRY:OIL 50
+
+
+
+###################################################
+#Cave Wheat
+###################################################
+  # PlantProcess
+  # Milling (via Bouyancy)
+	workflow count POWDER_MISC//GRASS_WHEAT_CAVE:MILL 100 10
+	#job item-material 1 GRASS_WHEAT_CAVE
+  # Brewing count
+	workflow count DRINK//GRASS_WHEAT_CAVE 50
+	#job item-material 1 GRASS_WHEAT_CAVE
+  # Cooking
+  # Pressing
+
+###################################################
+#Plump Helmets
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Pig Tail
+###################################################
+  # PlantProcess (via Bouyancy)
+  workflow amount THREAD//GRASS_TAIL_PIG:THREAD 30 20
+  #job item-material 1 GRASS_TAIL_PIG
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+    # ONLY WITH MASTERWORK MOD (via Bouyancy)
+    #   workflow amount LIQUID_MISC//GRASS_TAIL_PIG:OIL 100 10
+    #	job item-material 1 GRASS_TAIL_PIG
+###################################################
+#Sweet Pod
+###################################################
+  # PlantProcess (Added By Bouyancy)
+    workflow count LIQUID_MISC//POD_SWEET:EXTRACT 20 10
+    #job item-material 1 POD_SWEET
+  # Milling
+	workflow count POWDER_MISC//POD_SWEET:MILL 100 10
+    #job item-material 1 POD_SWEET
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Dimple Cup
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Whip Vine
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Sun Berry
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Fisher Berry
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Bloated Tuber
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+###################################################
+#Prickle Berry
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Muck Root
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Wild Strawberry
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Rope Read
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Rat Weed
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Silver Barb
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Valley Herb
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Kobold Bulb
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Hide Root
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+###################################################
+#Blade Weed
+###################################################
+  # PlantProcess
+  # Milling
+  # Brewing
+  # Cooking
+  # Pressing
+#FIN
