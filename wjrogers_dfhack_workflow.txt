@@ -1,0 +1,54 @@
+# enable the plugin
+workflow enable drybuckets auto-melt
+ 
+# farming
+workflow amount FOOD 120 30
+workflow amount DRINK 300 50
+workflow amount THREAD//GRASS_TAIL_PIG:THREAD 30 20
+workflow count LIQUID_MISC//POD_SWEET:EXTRACT 20 10
+ 
+# storage
+workflow amount BIN 10
+workflow amount BARREL 10
+workflow amount BOX/CLOTH,SILK,YARN 30 20
+ 
+# furniture
+workflow amount DOOR 10
+workflow amount COFFIN 10
+workflow amount STATUE 5
+workflow amount BED 10
+workflow amount CHAIR 10
+workflow amount TABLE 10
+workflow amount WEAPONRACK 10
+workflow amount ARMORSTAND 10
+workflow amount CABINET 10
+workflow amount BOX/STONE 10
+workflow amount CHAIN 10
+ 
+# materials
+workflow amount BAR//COAL 50 20
+workflow amount BAR//COPPER 30 10
+workflow amount BAR//SILVER 30 10
+workflow amount BAR//ALUMINUM 30 10
+workflow amount TRAPPARTS 20
+ 
+# military stocks
+workflow amount QUIVER 10
+workflow amount BACKPACK 10
+workflow amount FLASK 10
+workflow amount ARMOR:ITEM_ARMOR_CLOAK 10
+ 
+# to make certain constraints above work, their production jobs need to be
+# altered to specify a specific material
+job item-material 1 GRASS_TAIL_PIG
+job item-material 1 POD_SWEET
+ 
+# MASTERWORK-specific tweaks
+workflow amount WOOD//NETHERWOOD:WOOD 50 20
+workflow amount SKIN_TANNED//NETHER_WOOD 30 10
+workflow amount HELM:ITEM_HELM_HOOD_PADDED 10
+workflow amount GLOVES:ITEM_GLOVES_PADDED_MITTENS 20 10
+workflow amount ARMOR:ITEM_ARMOR_SHIRT_PADDED 10
+workflow amount PANTS:ITEM_PANTS_LEGGINGS_PADDED 10
+job item-material 1 INORGANIC:NETHER_WOOD           # use netherwood bark (leather)
+job item-material 1 CREATURE_MAT:ANIMAL:LEATHER     # use common leather
