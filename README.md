@@ -1,4 +1,4 @@
-DwarfFortress.Workflow
+DwarfFortress References
 ======================
 
-A collection of dfhack workflow config files. For reference.
+A collection of dwarf fortress config and reference files. Workflow, item RAWs, etc.
